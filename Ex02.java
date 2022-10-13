@@ -2,25 +2,21 @@ package day01;
 
 public class Ex02 {
 	public static void main(String[] args) {
-		// ÀÚ·áÇü º¯È¯
-		
 		
 		double pi = 3.14;
 		int num = (int)pi;
-		//Type mismatch: cannot convert from double to int
-		// ´ëÀÔ ¿¬»ê ½Ã, ÁÂº¯°ú ¿ìº¯ÀÇ ÀÚ·áÇüÀº °°¾Æ¾ß ÇÑ´Ù
-		// ÀÏ½ÃÀûÀ¸·Î ¿ìº¯ÀÇ °ªÀ» ¿øÇÏ´Â ÀÚ·áÇüÀ¸·Î º¯È¯ÇÑ ÀÌÈÄ ´ëÀÔÈù´Ù(casting)
+		// (int)ê°€ ì—†ë‹¤ë©´ ì˜¤ë¥˜
+		// ì¢Œë³€ ìš°ë³€ì´ ìë£Œí˜•ì´ ê°™ì•„ì•¼í•¨
 		
 		int num2 = 1234;
 		double db = num2;
+	
+		System.out.println("pi = "+pi);		//3.14
+		System.out.println("num = " + num);	//3
+		/
 		
-		//num2´Â Á¤¼öÀÌÁö¸¸, º¯¼ö¿¡ ¿Å°Ü´ãÀ¸¸é¼­ ¾Ï¹¬ÀûÀ¸·Î Çüº¯È¯ÀÌ ¹ß»ıÇÑ´Ù
-		// ¾Ï¹¬Àû Çüº¯È¯, promotion
-		
-		System.out.println("pi = "+pi);
-		System.out.println("num = " + num);
-		
-		System.out.println("num2 = "+num2);
-		System.out.println("num2 = "+db);
+		System.out.println("num2 = "+num2);	//1234
+		System.out.println("num2 = "+db);	//1234.0
+		//intí˜•ì‹num2ì— doubleí˜•ì‹ì˜ num2ë¥¼ ëŒ€ì…í•˜ë©´ ì•”ë¬µì ìœ¼ë¡œ í˜•ë³€í™˜ëœ ëª¨ìŠµ
 	}
 }
