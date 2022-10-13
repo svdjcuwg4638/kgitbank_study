@@ -2,66 +2,27 @@ package day01;
 
 import java.util.Scanner;
 
-// ÀÚ¹ÙÀÇ ¼Ò½ºÄÚµå´Â Å¬·¡½º°¡ ±âº» ±¸¼º ´ÜÀ§ÀÌ´Ù
-// ÀÚ¹Ù¿¡¼­ Å¬·¡½º¸¦ Á¦¿ÜÇÑ ³ª¸ÓÁö ¿ä¼Ò´Â ¸ğµÎ Ã¹±ÛÀÚ¸¦ ¼Ò¹®ÀÚ·Î ½ÃÀÛÇÑ´Ù
-// (º¯¼ö, ÇÔ¼ö, Á¢±ÙÁ¦ÇÑÀÚ, ÆĞÅ°Áö, ÇÁ·ÎÁ§Æ®....)
-// ´Ü, Å¬·¡½ºÀÇ static final ¸â¹ö´Â ¸ğµç ±ÛÀÚ¸¦ ´ë¹®ÀÚ·Î ÀÛ¼­¾Æ¸ç_·Î ´Ü¾î·Î ±¸ºĞÇÑ´Ù
-// º¯¼ö ¹× ÇÔ¼öÀÇ ÀÌ¸§Àº ¼Ò¹®ÀÚ, _ ·Î ½ÃÀÛÇÒ¼ö ÀÖ´Ù. ( ¼ıÀÚ´Â Ã¹¹øÂ° ±ÛÀÚ°¡  µÉ ¼ö ¾ø´Ù)
-
-
-/*
-*	dao.selectALL()	: °´Ã¼ÀÇ ¸Ş¼­µå¸¦ È£Ãâ
-*	DAO.getInstance() : Å¬·¡½ºÀÇ Á¤Àû ¸Ş¼­µå¸¦ È£Ãâ
 */
 public class Ex01 {
 	public static void main(String[] args) {
 		
-		
-		// ÀÚ·áÇü(data type)
-		/*
-		 * 	#	boolean 	1¹ÙÀÌÆ® 	³í¸®°ª			true, false
-		 *		byte		1¹ÙÀÌÆ®	Á¤¼ö(8ºñÆ®)		-128 ~ +127
-		 *		short		2¹ÙÀÌÆ® 	Á¤¼ö(8ºñÆ®)		-32768 ~ +32767
-		 *		char		2¹ÙÀÌÆ®	Á¤¼ö(±ÛÀÚ)			0~ 65535
-		 *		int			4¹ÙÀÌÆ® 	Á¤¼ö(32ºñÆ®)		¾à-21¾ï~¾à+21¾ï
-		 *	#	long		8¹ÙÀÌÆ®	Á¤¼ö(64ºñÆ®)		-922Á¶ ~ +922Á¶
-		 *		float		4¹ÙÀÌÆ®	½Ç¼ö
-		 *	#	double		8¹ÙÀÌÆ® 	½Ç¼ö
-		 * 
-		 * 
-		 * 1. primitive type (´Ü¼ø ÀÚ·áÇü, ¿ø½Ã ÀÚ·áÇü) (int,char,double,,,,)
-		 * ¼Ò¹®ÀÚ·Î ½ÃÀÛÇÏ¿© ÃÑ 8°³ÀÇ ±âÃÊÀûÀÎ ÀÚ·áÇüÀÌ ÀÖ´Ù
-		 * º¹ÀâÇÑ µ¥ÀÌÅÍ°¡ ¾Æ´Ï¹Ç·Î, º¯¼ö¿¡ µ¥ÀÌÅÍ¸¦ Á÷Á¢ ÀúÀåÇÑ´Ù
-		 * 
-		 * 2. reference Type (ÀáÁ¶ ÀÚ·áÇü)
-		 * - Array Type : ¹è¿­
-		 *  - Class Type : Å¬·¡½º, ÀÎÅÍÆäÀÌ½º µî...
-		 * 
-		 * ´ÜÀÏ µ¥ÀÌÅÍ¸¦ ¸Ş¸ğ¸®¿¡ ÀúÀåÇÏ°í ½Í´Ù -> Å©±â¿¡ ¸Â´Â º¯¼ö
-		 * °°Àº ÀÚ·áÇüÀÇ µ¥ÀÌÅÍ¸¦ ¿©·¯°³ ¹­¾î¼­ ÀúÀåÇÏ°í ½Í´Ù -> ¹è¿­
-		 * 
-		 * ¼­·Î ´Ù¸¥ ÀÚ·áÇüÀÇ µ¥ÀÌÅÍ¸¦ ¹­¾î¼­ ÀúÀåÇÏ·Á¸é »õ·Î¿î ÀÚ·áÇüÀ» Á¤ÀÇÇØ¾ß ÇÑ´Ù
-		 * 
-		 * ±¸Á¶Ã¼ in   c¾ğ¾î 		º¯¼ö¸¸ ¹­¾î¼­ ÀÚ·áÇüÀ» ¸¸µç´Ù
-		 * Å¬·¡½º in 	java(c++)	º¯¼ö¿Í ÇÔ¼ö¸¦ ¹­¾î¼­ ÀÚ·áÇüÀ» ¸¸µç´Ù
-		 * 
-		 * 
-		 *  
-		 */
+
 		Scanner sc = new Scanner(System.in);
-		System.out.print("itbank¶ó°í ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("itbankë¼ê³  ì…ë ¥í•˜ì„¸ìš” : ");
 		String str1 = sc.nextLine();
 		
 		String str2 = "itbank"; 
 		String str3 = new String("itbank");
 		String str4 = "itbank";
 		
-		System.out.println(str1 == str2);
-		System.out.println(str1 == str3);
-		System.out.println(str2 == str3);
-		System.out.println(str2 == str4);
+		System.out.println(str1 == str2);	//false
+		System.out.println(str1 == str3);	//false
+		System.out.println(str2 == str3);	//false
+		System.out.println(str2 == str4);	//true
 		sc.close();
 				
+		// str2ë²ˆê³¼ 4ë²ˆì€ ê°™ì€ ê³³ì„ ë°”ë¼ë³´ê²Œ ëœë‹¤
+		// í•˜ì§€ë§Œ 1,3ë²ˆ strì€ ìƒˆë¡œìš´ ê³µê°„ì— itbankì„ ì €ì¥í•œë‹¤
 		
 	}
 	
