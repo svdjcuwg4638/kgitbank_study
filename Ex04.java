@@ -2,43 +2,20 @@ package day02;
 
 public class Ex04 {
 	public static void main(String[] args) {
-		boolean a1;		//primitive type, ¿ø½Ã ÀÚ·áÇü
-		byte a2;		// µ¥ÀÌÅÍ¸¦ ÀúÀåÇÏ´Â ¸ñÀûÀ¸·Î »ç¿ë
-		char a3;		// °´Ã¼°¡ ¾Æ´Ï´Ù
-		short a4;		// ÇÔ¼ö¸¦ Æ÷ÇÔÇÏÁö ¾Ê°í, ¿À·ÎÁö ÀúÀå¸ñÀûÀ¸·Î¸¸ »ç¿ëÇÑ´Ù
-		int a5;
-		long a6;
-		float a7;
-		double a8;
-		
-		Boolean b1;		// Wrapper Class, ¿ø½ÃÀÚ·áÇüÀÇ º¯¼ö¸¦ °´Ã¼ À¯ÇüÀ¸·Î Æ÷ÀåÇÏ´Â Å¬·¡½º
-		Byte b2;		// µ¥ÀÌÅÍ¸¦ ÀúÀåÇÏ¸é¼­, °ü·ÃµÈ ÇÔ¼ö¸¦ Æ÷ÇÔÇÏ´Â ÀÚ·áÇü
-		Character b3;	// Å¬·¡½º¿¡ ÀÇÇØ¼­ ¸¸µé¾îÁø °´Ã¼ À¯ÇüÀÌ´Ù
-		Short b4;		// ÇÔ¼ö¸¦ Æ÷ÇÔÇÑ´Ù. °´Ã¼ÀÇ ÇÔ¼ö È¤Àº Å¬·¡½ºÀÇ ÇÔ¼ö°¡ ÀÖ´Ù
-		Integer b5;		// integer.parseInt(String s)¿Í ¸¶Âù°¡Áö·Î ¹®ÀÚ¿­À» Çüº¯È¯ÇÏ´Â ÇÔ¼öµµ ÀÖ´Ù
-		Long b6;
-		Float b7;
-		Double b8;
-		
-		a2 = 10;
-		b2 =20;
-	 	
-// 		a2. 		// a2´Â ¿ø½ÃÇü º¯¼öÀÌ¹Ç·Î, ¸Ş¼­µå¸¦ Æ÷ÇÔÇÏÁö ¾Ê´Â´Ù
-//		b2.			// º¯¼ö´Â °´Ã¼¸¦ ÀúÀåÇÏ°í, °´Ã¼ÀÇ ¸Ş¼­µå°¡ Æ÷ÇÔµÇ¾î ÀÖ´Ù
-//		Byte. 		// °´Ã¼¸¦ »ı¼ºÇÏÁö ¾Ê´õ¶óµµ, Å¬·¡½º¿¡µµ ¸Ş¼­µå°¡ Æ÷ÇÔµÇ¾î ÀÖ´Ù
-		
+
+
 		String t1 ="1234";
 		int num = 0;
 		
-		// ¹®ÀÚ¿­À» Á¤¼ö·Î Á÷Á¢ ¹Ù²Ù´Â ÄÚµå
-		for(int i=0; i< t1.length();i++) {
-			char ch = t1.charAt(i);
+		// ë¬¸ìì—´ì„ ì •ìˆ˜ë¡œ ì§ì ‘ ë°”ê¾¸ëŠ” ì½”ë“œ
+		for(int i=0; i< t1.length();i++) {	//length( ) ë¡œ ê¸€ììˆ˜ íŒŒì•…
+			char ch = t1.charAt(i);		//charAt( )ë¡œ ëª‡ë²ˆì§¸ ê¸€ìë¥¼ ë½‘ì•„ì˜´
 			num *= 10;
 			num += (int)(ch -48);
 		}
 		System.out.println("num : "+num);
 		
-		// wrapper classÀÇ ¸¸µé¾îÁø ÇÔ¼ö¸¦ ÀÌ¿ëÇÏ¿© º¯È¯ÇÏ´Â ÄÚµå
+		// wrapper classì˜ ë§Œë“¤ì–´ì§„ í•¨ìˆ˜ë¥¼ ì´ìš©í•˜ì—¬ ë³€í™˜í•˜ëŠ” ì½”ë“œ
 		int num2 = Integer.parseInt(t1);
 		System.out.println("num2 : "+ num2);
 	}
