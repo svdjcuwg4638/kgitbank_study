@@ -15,12 +15,13 @@ public class Quiz02 {
 
 	private static int parseInt(String s1) {
 		int num =0;
-		for(int i =0; i<s1.length();i++) {
-			char ch= s1.charAt(i);
+		for(int i =0; i<s1.length();i++) {	
+			char ch= s1.charAt(i);		//ch함수에 s1변수의 i번재의 글자를 가져와 저장
 			System.out.println(ch);
-			if('0'<=ch && ch>='9') {
-				num*=10;
-				num += ch-48;
+			if('0'<=ch && ch>='9') {	//ch가 0~9면은
+				num*=10;		
+				num += ch-48;		//num에 숫자저장
+							// - 48인 이유는 char은 아스키코드로 저장되어있기때
 			}
 			
 		}
