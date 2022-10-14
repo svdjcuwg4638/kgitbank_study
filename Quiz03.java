@@ -2,16 +2,16 @@ package day04;
 
 public class Quiz03 {
 	public static void main(String[] args) {
-		// 1) Á¤¼ö¸¦ ¿©·¯°³ Àü´Ş¹Ş¾Æ¼­, ÃÖ¼Ò°ªÀ» ¹İÈ¯ÇÏ´Â ÇÔ¼ö¸¦ ÀÛ¼ºÇÏ¼¼¿ä
+		// 1) ì •ìˆ˜ë¥¼ ì—¬ëŸ¬ê°œ ì „ë‹¬ë°›ì•„ì„œ, ìµœì†Œê°’ì„ ë°˜í™˜í•˜ëŠ” í•¨ìˆ˜ë¥¼ ì‘ì„±í•˜ì„¸ìš”
 		int n1= min(10,5,11);
 		System.out.println("n1 : "+n1);
 		
-		// 2) ¹®ÀÚ¿­¿¡¼­ Æ¯Á¤ ±ÛÀÚ°¡ ¸î°³ Æ÷ÇÔµÇ¾îÀÖ´ÂÁö ¹İÈ¯ÇÏ´Â ÇÔ¼ö¸¦ ÀÛ¼ºÇÏ¼¼¿ä
+		// 2) ë¬¸ìì—´ì—ì„œ íŠ¹ì • ê¸€ìê°€ ëª‡ê°œ í¬í•¨ë˜ì–´ìˆëŠ”ì§€ ë°˜í™˜í•˜ëŠ” í•¨ìˆ˜ë¥¼ ì‘ì„±í•˜ì„¸ìš”
 		int n2=count("Life is too short, you need python",'e');
 		System.out.println("n2 : "+n2);
 		
-		// 3) ¹®ÀÚ¿­ ÇüÅÂ·Î Ä«µå¹øÈ£¸¦ ÀÔ·Â¹Ş¾Æ¼­, ±æÀÌ°¡ ¸Â´ÂÁö È®ÀÎÇÏ´Â ÇÔ¼ö¸¦ ÀÛ¼ºÇÏ¼¼¿ä
-		// ÀüÃ¼±æÀÌ, -ÀÇ °³¼ö, ºĞ¸®ÇßÀ»¶§ °¢ µ¢¾î¸®ÀÇ ±æÀÌ
+		// 3) ë¬¸ìì—´ í˜•íƒœë¡œ ì¹´ë“œë²ˆí˜¸ë¥¼ ì…ë ¥ë°›ì•„ì„œ, ê¸¸ì´ê°€ ë§ëŠ”ì§€ í™•ì¸í•˜ëŠ” í•¨ìˆ˜ë¥¼ ì‘ì„±í•˜ì„¸ìš”
+		// ì „ì²´ê¸¸ì´, -ì˜ ê°œìˆ˜, ë¶„ë¦¬í–ˆì„ë•Œ ê° ë©ì–´ë¦¬ì˜ ê¸¸ì´
 		boolean b1 = check("2134-1234-1234-2134");	//true
 		boolean b2 = check("867-2356123-1234567");	//false
 		boolean b3 = check("930516-2345678");		//false
@@ -22,16 +22,16 @@ public class Quiz03 {
 	static boolean check(String string) {
 		boolean flag = true;
 		
-		if(string.length() != 19) flag=false;
+		if(string.length() != 19) flag=false;	//1. ê¸€ììˆ˜ í™•ì¸
 		
-		if(count(string,'-')!=3) flag =false;
+		if(count(string,'-')!=3) flag =false;	//2. -ê°€ 3ê°œì¸ì§€ í™•ì¸
 		
-		String[] arr = string.split("-");
-		if(arr.length !=4)
+		String[] arr = string.split("-");	//3. -ê¸°ì¤€ splitë¡œ 4ë“±ë¶„
+		if(arr.length !=4)			//4. 4ë“±ë¶„ì´ ì•ˆëœë‹¤ë©´ false
 			flag =false;
 		
-		for(int i = 0; i < arr.length;i++) {
-			String s = arr[i];
+		for(int i = 0; i < arr.length;i++) {	//5. ë°°ì—´ í•œì¹¸ë‹¹ 4ì˜ê¸¸ì´ê°€ ë˜ëŠ”ì§€ í™•ì¸ 
+			String s = arr[i];		//    ì•ˆëœë‹¤ë©´ false
 			
 			if(s.length() !=4) flag = false;
 		}
@@ -42,8 +42,8 @@ public class Quiz03 {
 	static int count(String string, char c) {
 		int cnt = 0;
 		for(int i =0; i<string.length();i++) {
-			char current = string.charAt(i);
-			if(current==c) {
+			char current = string.charAt(i);	//currentì— ê¸€ìí•˜ë‚˜ì”© ì €ì¥
+			if(current==c) {			//í•˜ë‚˜ì”© cì™€ ë¹„êµ ë§ìœ¼ë©´ cnt1ì¦ê°€
 				cnt++;
 			}
 		}
@@ -59,6 +59,13 @@ public class Quiz03 {
 				ret=num;
 			}
 		}
+		for(int i=0; i<arr.length;i++) {
+			String s =arr[i];
+			char ch =s.charAt(i);
+			if(48>ch && ch>57 ) {
+				flag =false;
+			}
+		}	
 		
 		return ret;
 	}
