@@ -2,54 +2,21 @@ package day04;
 
 public class Ex03 {
 	public static void main(String[] args) {
-		// ¹®ÀÚ¿­ °ü·Ã ÇÔ¼ö
-		
-		String s1 = "root:x:0:0:root:/root:/bin/bash";
-		String[] arr = s1.split(":");	//split ±¸ºÐÀÚ¸¦ Á¤ÀÇÇÏ¿© ³ª´²ÁÜ
-		for(int i = 0;i<arr.length;i++) {
-			System.out.println(arr[i]);
-		}
-		System.out.println();
-													//  query=°Ë»ö	where=ÅÇ(ÀÌ¹ÌÁöÅÇ)
-		String s2 = "http://search.naver.com/search.naver?query=¾ÆÀÌÀ¯&where=image";
-		String[] a1= s2.split("\\?");	//? ´Â º°µµÀÇ ±â´ÉÀÌ ÀÖ¾î¼­ Á¦°ÅÇÔ
-		String[] a2= a1[1].split("&");
-		for(int i = 0;i<a2.length;i++) {
-			String[] a3 =a2[i].split("=");
-			System.out.printf("%s : %s\n",a3[0],a3[1]);
-		}
-		System.out.println();
-		
-		//substring : ¹®ÀÚ¿­ »©±â (-)
-		// a.substring(int beginIndex, int endIndex)
-		
-		String s3 = s2.substring(8, 24);
-		System.out.println(s3);
-		
-		int beginIndex = s2.indexOf("search");
-		int endIndex = s2.lastIndexOf("/search")-1;
+
+													//  query=ê²€ìƒ‰	where=íƒ­(ì´ë¯¸ì§€íƒ­)
+		String s2 = "http://search.naver.com/search.naver?query=ì•„ì´ìœ &where=image";
+
 		
 		System.out.printf("%d~%d\n",beginIndex,endIndex);
 		
+		int beginIndex = s2.indexOf("search");
+		int endIndex = s2.lastIndexOf("/search");
 		
 		String s4 = s2.substring(beginIndex,endIndex);
 		System.out.println(s4);
+		//ì¶œë ¥ ê²°ê³¼ = search.naver.com
 		
-		// ¹®ÀÚ¿­ÀÇ ÀÏÄ¡ ºñ±³
-		String t1 = "apple";
-		String t2 = new String("apple");	//Scanner·Î ÀÔ·Â¹ÞÀº ¹®ÀÚ¿­µµ ¶È°°´Ù
-		String t3 = "apple";
-		
-		System.out.printf("%s, %s, %s\n",t1,t2,t3);
-		
-		//¹Ù¶óº¸´Â ´ë»óÀÌ ÀÏÄ¡ÇÏ´Â°¡
-		System.out.println(t1==t3);
-		System.out.println(t1==t2);
-		
-		// ¹®ÀÚ¿­À» ºñ±³ÇÒ¶© ¹«Á¶°Ç equals·Î ¸¸µéÀÚ
-		// °¢ ´ë»óÀÇ ³»¿ëÀÌ ¶È°°Àº°¡
-		System.out.println(t1.equals(t2));
-		System.out.println(t1.equals(t3));
+
 		
 	}
 }
