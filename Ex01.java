@@ -3,60 +3,34 @@ package day04;
 public class Ex01 {
 
 	public static void main(String[] args) {
-		// 1) ¹®ÀÚ¿­À» ¿øÇÏ´Â ¼­½Ä¿¡ ¸ÂÃç¼­ ¸¸µé¾îÁÖ´Â String.format( )
-		String name = "¾Æ¸Ş¸®Ä«³ë";
-		int price = 1500;
-		System.out.printf("%s : %,d¿ø\n",name,price );
-		
-		// printf() ´Â ¹®ÀÚ¿­À» ¼­½Ä¿¡ ¸ÂÃç¼­ È­¸é¿¡ Ãâ·ÂÇÑ´Ù
-		// String.format() Àº °°Àº ¹æ¹ıÀ¸·Î ¹®ÀÚ¿­À» ¸¸µé¾î¼­ ¹İÈ¯ÇÑ´Ù (º¯¼ö¿¡ ÀúÀå °¡´É)
-		
-		String result = String.format("%s : %,d¿ø\n", name,price);
-		System.out.println(result);
-		
-		// ¼­½Ä Á¦¾î ¹®ÀÚ
 
-		/*
-		 * 		Á¦¾î¹®ÀÚ		ÀÚ·áÇü
-		 * 		%s			String		¹®ÀÚ¿­À» Ç¥ÇöÇÏ´Â ¼­½Ä¹®ÀÚ
-		 * 		%d			Á¤¼ö			Á¤¼ö¸¦ 10Áø¼ö ÇüÅÂ·Î Ç¥Çö
-		 * 		%f			½Ç¼ö			½Ç¼ö¸¦ Ç¥Çö
-		 * 		%c 			±ÛÀÚ			Á¤¼ö¸¦ ÄÚµå¿¡ ¸Â´Â ±ÛÀÚ·Î Ç¥Çö(char)
-		 * 		%x			Á¤¼ö			Á¤¼ö¸¦ 16Áø¼ö ÇüÅÂ·Î Ç¥Çö
-		 * 
-		 * 	1) % ¿Í ±ÛÀÚ »çÀÌ¿¡ Á¤¼ö¸¦ ³Ö¾î¼­ ÀÚ¸®Â÷ÁöÇÒ Ä­ ¼ö¸¦ ÁöÁ¤ÇÒ ¼ö ÀÖ´Ù
-		 *  2) Á¤¼ö´Â %02d ¿Í °°ÀÌ 2ÀÚ¸®·Î Ãâ·ÂÇÏ°í, °ªÀÌ ºÎÁ·ÇÏ¸é 0À¸·Î Ã¤¿ï ¼ö ÀÖ´Ù
-		 *  3) ½Ç¼ö´Â %.2f ¿Í °°ÀÌ ¼Ò¼öÁ¡ ÀÌÇÏ ÀÚ¸®¸¦ 2ÀÚ¸®±îÁö¸¸ Ç¥ÇöÇÒ ¼ö ÀÖ´Ù
-		 *  4) ¼ıÀÚ´Â %,d ¿Í °°ÀÌ Ãµ´ÜÀ§ ±¸ºĞ±âÈ£¸¦ ÀÚµ¿À¸·Î Ã³¸®ÇÒ ¼ö ÀÖ´Ù
-		 *  
-		 *
-		 */
-		System.out.printf("[%s]\n","java");
-		System.out.printf("[%10s]\n","java");
-		System.out.printf("[%-10s]\n","java");
+
+		System.out.printf("[%s]\n","java");		
+		System.out.printf("[%10s]\n","java");		//[      java]
+		System.out.printf("[%-10s]\n","java");		//[java      ]
 		
 		System.out.printf("[%d]\n",1236000);
-		System.out.printf("[%9d]\n",1236000);
-		System.out.printf("[%09d]\n",1236000);
-		System.out.printf("[%,09d]\n",1236000);
+		System.out.printf("[%9d]\n",1236000);		//[  1236000]
+		System.out.printf("[%09d]\n",1236000);		//[001236000]ê³µë°±ì— 0ì´ ìˆì–´ì•¼í•˜ëŠ” í”„ë¡œê·¸ë¨ì´ë©´ ì¢‹ì•„ë³´ì¸ë‹¤
+		System.out.printf("[%,09d]\n",1236000);		//[1,236,000]
 		
-		System.out.printf("[%02d : %02d]\n",123/60,127%60);
+		System.out.printf("[%02d : %02d]\n",123/60,127%60);	[02 : 07]
 		
-		System.out.printf("[%f]\n",3.14);	//ÀÚ¸´¼ö¸¦ ÁöÁ¤ÇÏÁö ¾ÊÀ¸¸é ¼Ò¼öÁ¡ ÀÌÇÏ 6ÀÚ¸®±îÁö
-		System.out.printf("[%f]\n",3.1415923446);	//printf¼­½ÄÀ¸·Î Ãâ·Â½Ã 6ÀÚ¸®Ç¥±â
-		System.out.println(3.1415464534534);		//println À¸·Î Ãâ·Â½Ã ¸ğµÎ Ç¥±â;
+		System.out.printf("[%f]\n",3.14);	//ìë¦¿ìˆ˜ë¥¼ ì§€ì •í•˜ì§€ ì•Šìœ¼ë©´ ì†Œìˆ˜ì  ì´í•˜ 6ìë¦¬ê¹Œì§€
+		System.out.printf("[%f]\n",3.1415923446);	//printfì„œì‹ìœ¼ë¡œ ì¶œë ¥ì‹œ 6ìë¦¬í‘œê¸°
+		System.out.println(3.1415464534534);		//println ìœ¼ë¡œ ì¶œë ¥ì‹œ ëª¨ë‘ í‘œê¸°;
 		System.out.printf("[%.2f]\n",3.1415923446);	
-//		System.out.printf("[%.2f]\n",100);	//100ÀÔ·Â½Ã Á¤¼ö¸¦ ³Ö¾î¼­ ¿À·ù¹ß»ı	
-		System.out.printf("[%.2f]\n",100.0);//.0À» ºÙ¿©¼­ ÀÚ·áÇü ¸ÂÃçÁÜ!
+//		System.out.printf("[%.2f]\n",100);	//100ì…ë ¥ì‹œ ì •ìˆ˜ë¥¼ ë„£ì–´ì„œ ì˜¤ë¥˜ë°œìƒ	
+		System.out.printf("[%.2f]\n",100.0);//.0ì„ ë¶™ì—¬ì„œ ìë£Œí˜• ë§ì¶°ì¤Œ!
 		
 		System.out.printf("[%c]\n",65);
 		System.out.printf("[%c]\n",66);
-		System.out.printf("[%c]\n",44032);
-		System.out.printf("[%c]\n",44033);
-		System.out.printf("[%c]\n",'³ª');
-		System.out.printf("[%c]\n",'³ª'+1);
+		System.out.printf("[%c]\n",44032);	//ê°€
+		System.out.printf("[%c]\n",44033);	//ê°
+		System.out.printf("[%c]\n",'ë‚˜');	// ë‚˜
+		System.out.printf("[%c]\n",'ë‚˜'+1);	// ë‚™
 		
-//		objectÇü½Ä : ÀÚ¹ÙÀÇ ¸ğµç ÀÚ·áÇüÀ» Ã³¸®ÇÒ ¼ö ÀÖ´Ù
+//		objectí˜•ì‹ : ìë°”ì˜ ëª¨ë“  ìë£Œí˜•ì„ ì²˜ë¦¬í•  ìˆ˜ ìˆë‹¤
 			
 		
 	
