@@ -35,6 +35,16 @@ public class Quiz03 {
 			
 			if(s.length() !=4) flag = false;
 		}
+		for(int i=0; i<arr.length;i++) {	//6.하나하나 숫자인지 확인
+			String s =arr[i];		//이중포문사용 
+			for(int j = 0; j<s.length();j++) {	
+				char ch =s.charAt(j);	
+				if(48>ch || ch>57 ) {	//ASCII 코드기준 비교
+					flag =false;
+					break;
+				}
+			}
+		}		
 		
 		return flag;
 	}
@@ -51,22 +61,15 @@ public class Quiz03 {
 	}
 
 	static int min(int... args) {
-		int ret = 100000000;
+		int ret = args[0];	//args배열 0 -> 첫번째를 작은수로 정의
 		
-		for(int i = 0; i < args.length;i++) {
+		for(int i = 1; i < args.length;i++) {	//1부터 시작하여 첫번째는 스킵하구 두번쨰부터 시작
 			int num = args[i];
 			if(ret>num) {
 				ret=num;
 			}
 		}
-		for(int i=0; i<arr.length;i++) {
-			String s =arr[i];
-			char ch =s.charAt(i);
-			if(48>ch && ch>57 ) {
-				flag =false;
-			}
-		}	
-		
+
 		return ret;
 	}
 }
