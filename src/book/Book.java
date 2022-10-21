@@ -1,6 +1,5 @@
 package book;
 
-// Á¦¸ñ, ÀúÀÚ, ÃâÆÇ»ç, °¡°İ, º°Á¡1, º°Á¡2
 
 public class Book {
 	String name;
@@ -21,9 +20,9 @@ public class Book {
 		this.starPoint2 = starPoint2;
 	}
 	
-	String toStr() {	// toString() Àº »ó¼Ó°ú °ü·ÃÀÖ¾î¼­ ´Ù¸¥ ÀÌ¸§À» »ç¿ë
+	String toStr() {	// toString() ì€ ìƒì†ê³¼ ê´€ë ¨ìˆì–´ì„œ ë‹¤ë¥¸ ì´ë¦„ì„ ì‚¬ìš©
 		
-		String form = "%s (%s | %s)\t%,d¿ø (³»¿ë: %.1f / ±¸¼º : %.1f)";
+		String form = "%s (%s | %s)\t%,dì› (ë‚´ìš©: %.1f / êµ¬ì„± : %.1f)";
 		form = String.format(form, name, author, publisher, price, starPoint1, starPoint2);
 //		System.out.println(form);
 		return form;
