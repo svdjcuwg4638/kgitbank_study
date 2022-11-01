@@ -1,0 +1,51 @@
+package airplane;
+
+import java.util.Random;
+
+public class Airplane {
+	
+	private Random ran = new Random();
+	Human[] arr = new Human[5];
+	
+	public int entrance(Human c) {
+		for(int i = 0; i < arr.length; i++) {
+			if(arr[i] == null) {
+				arr[i] = c;
+				System.out.println(c.name + " Å¾½Â ¿Ï·á");
+				return 1;
+			}
+		}
+		System.out.println(c.name + " Å¾½Â ºÒ°¡");
+		return 0;
+	}
+	
+	public int emergency() {
+		
+		int index;
+		int cnt = 0;
+		do {
+			index = ran.nextInt(arr.length);
+			if(cnt > 100) {
+				System.out.println("Å¾½Â°´ÀÌ ¾ø½À´Ï´Ù");
+				return -1;
+			}
+			cnt++;
+		}while(arr[index] == null);
+		
+		System.out.println(arr[index].name + " °í°´ÀÌ ±ÞÃ¼Çß½À´Ï´Ù");
+		return index;
+	}
+	
+	
+	public void healing(int index) {
+		for(int i =0; i < arr.length;i++) {
+			if(arr[i]!= arr[index] && arr[i] instanceof Doctor) {
+				Doctor d1 =(Doctor) arr[i];
+				d1.heal(arr[index]);
+				break;
+			}
+		}
+	}
+
+	
+}
