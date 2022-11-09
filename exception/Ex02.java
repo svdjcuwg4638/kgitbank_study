@@ -8,16 +8,16 @@ public class Ex02 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int n1;
-		
-		System.out.print("Á¤¼ö ÀÔ·Â : ");
-		try { // ´ÙÀ½ ÄÚµå¸¦ ½ÃµµÇÏ¿©
+			// ë¬´ìŠ¨ë¬´ìŠ¨ì½”ë“œë‹¤ ì´ê±¸ ê¸°ì–µí•˜ì
+		System.out.print("ì •ìˆ˜ ì…ë ¥ : ");
+		try { // ë‹¤ìŒ ì½”ë“œë¥¼ ì‹œë„í•˜ì—¬
 			n1 = sc.nextInt();
 			System.out.println("n1 : "+n1);
-		}catch (InputMismatchException e) { // ÁöÁ¤ÇÑ Å¸ÀÔÀÇ ¿¹¿Ü°¡ ¹ß»ıÇÏ¸é °´Ã¼ e·Î ¹Ş´Â´Ù
-//			e.printStackTrace();// ¿¹¿Ü ¹ß»ı ½ºÅÃÀ» ¼ø¼­´ë·Î Ãâ·ÂÇÑ´Ù
-			System.err.println("Á¤¼ö¸¦ ÀÔ·ÂÇØ¾ß ÇÕ´Ï´Ù !!");
+		}catch (InputMismatchException e) { // ì§€ì •í•œ íƒ€ì…ì˜ ì˜ˆì™¸ê°€ ë°œìƒí•˜ë©´ ê°ì²´ eë¡œ ë°›ëŠ”ë‹¤
+//			e.printStackTrace();// ì˜ˆì™¸ ë°œìƒ ìŠ¤íƒì„ ìˆœì„œëŒ€ë¡œ ì¶œë ¥í•œë‹¤
+			System.err.println("ì •ìˆ˜ë¥¼ ì…ë ¥í•´ì•¼ í•©ë‹ˆë‹¤ !!");
 		}
-		System.out.println("³¡");
+		System.out.println("ë");
 		sc.close();
 		
 		
