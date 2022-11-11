@@ -13,16 +13,16 @@ public class Ex01 {
 		
 		ArrayList<String> list = new ArrayList<String>(
 			Arrays.asList(new String[] {
-			"ÀÌÁöÀº","È«ÁøÈ£","³ª´Üºñ"
+			"ì´ì§€ì€","í™ì§„í˜¸","ë‚˜ë‹¨ë¹„"
 			})
 			
 		);	
 		FileOutputStream fos = new FileOutputStream("ex01.dat");
 		ObjectOutputStream oos = new ObjectOutputStream(fos);
-		oos.writeObject(list);	//implement Serializable ÇÑ °´Ã¼¸¦ byte ´ÜÀ§·Î ºĞÇØÇÏ¿© ÀúÀå\
+		oos.writeObject(list);	//implement Serializable í•œ ê°ì²´ë¥¼ byte ë‹¨ìœ„ë¡œ ë¶„í•´í•˜ì—¬ ì €ì¥\
 //		Byte[] buf = (Byte[])list.toArray();
 //		oos.writeBytes(buf);
-		oos.write("•û•û·Î".getBytes());
+		oos.write("ë¼¤ëº´ë¡œ".getBytes());
 		oos.flush();
 		oos.close();
 		
