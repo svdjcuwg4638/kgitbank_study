@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex05.html</title>
+    <style>
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        ul{
+            margin: auto;
+            border-top:3px solid #ffa800;
+            list-style: none;
+            padding-left: 0;
+
+            width: 1020px;
+            height: 45px;
+            background-color: antiquewhite;
+
+            display: flex;
+            
+        }
+        ul > li {
+            
+            background-color: #313131;
+            border: 1px white;
+            width: 100%;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        li > a:hover{
+            color: #ffa800;
+            cursor: pointer;
+        }
+        ul a {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        ul > li:hover{
+            background: linear-gradient(-15deg, white 50%, black 50%);
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>flex 간단 정렬 (2)</h1>
+    <hr>
+
+    <ul>
+        <li><a href="https://battlegrounds.inven.co.kr/">홈</a></li>
+        <li><a href="https://battlegrounds.inven.co.kr/module/discord/">클랜 디스코드 찾기</a></li>
+        <li><a href="https://battlegrounds.inven.co.kr/dataninfo/stream/">라이브 방송</a></li>
+        <li><a href="https://battlegrounds.inven.co.kr/dataninfo/item/">아이템</a></li>
+        <li><a href="https://pubg.inven.co.kr/dataninfo/map/erangel/">지도</a></li>
+        <li><a href="https://battlegrounds.inven.co.kr/dataninfo/costume/">코스튬</a></li>
+    </ul>
+
+</body>
+</html>

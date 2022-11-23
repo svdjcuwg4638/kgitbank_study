@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz2.html</title>
+    <style>
+        body{
+            border: 1px dashed pink;
+            width: 900px;
+        }
+        nav{
+            display: flex;
+            justify-content: 20px;
+            align-items: center;
+            
+        }
+        nav, section,header,aside,footer{
+            margin: 10px;
+        }
+        header{
+            padding-top: 40px;
+            padding-left: 30px;
+            
+            font-weight: bold;
+            font-size: 30px;
+            border: 1px dashed black;
+            height: 100px;
+            position: relative;
+        }
+        aside{
+            height: 300px;
+            margin-top: 10px;
+            margin-right: 10px;
+            border: 1px dashed black;
+            padding-left: 30px;
+            padding-top: 20px;
+            padding-right: 45px;
+        }
+        section{
+            margin-top: 20px;
+            height: 300px;
+            margin-right: 10px;
+            border: 1px dashed black;
+            padding-left: 25px;
+            padding-top: 30px;
+            padding-right: 45px;
+            margin-bottom: 20px;
+        }
+        .sidebar{
+            margin-top: 10px;
+            position: relative;
+            top: -70px;
+            height: 150px;
+            padding-left: 25px;
+            padding-top: 40px;
+            padding-right: 45px;
+        }
+        footer{
+            
+            font-size: 25px;
+            font-weight: bold;
+            padding: 30px;
+            border: 1px solid blue;
+        }
+        footer > p{
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        사이트 제목
+    </header>
+    <nav>
+        <aside>
+            사이드바
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>javascript</li>
+            </ul>
+        </aside>
+        <section>
+            본문
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+                Temporibus necessitatibus rerum aut distinctio expedita, <br>
+                sapiente rem autem quos quam! Amet repellat esse distinctio <br>
+                iste? Tenetur maxime explicabo earum deleniti dolorem?</p>
+        </section>
+        <aside class="sidebar">
+            사이드바
+            <ul >
+                <li>항목 1</li>
+                <li>항목 2</li>
+                <li>항목 3</li>
+                <li>항목 4</li>
+            </ul>
+        </aside>
+    </nav>
+    <footer>
+        푸터
+        <p>저작권 정보</p>
+        <p>연락처 등</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px dashed black;
+        }
+        #root {
+            width: 900px;
+            margin: auto;
+        }
+        #lang {
+            display: flex;
+            justify-content: flex-end;
+        }
+        #form {
+            width: 500px;
+            margin: auto;
+        }
+        .logo {
+            font-size: 70px;
+            display: flex;
+            justify-content: center;
+        }
+        .tab {
+            font-size: 25px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .sb {
+            display: flex;
+            justify-content: space-between;
+        }
+        .tabSize{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 50px;
+        }
+
+        p>input{
+            margin-left: 25px;
+            width: 430px;
+            height: 40px;
+
+        }
+        select{
+            margin-top: 25px;
+            margin-right: 40px;
+            padding: 2px;
+        }
+        button{
+            display: flex;
+
+        }
+    </style>
+</head>
+<body>
+
+    <div id="root">
+        <div id="lang">
+            <select>
+                <option>한국어</option>
+                <option>English</option>
+                <option>中文</option>
+            </select>
+        </div>
+        <div id="form">
+
+            <div style="height: 70px;"></div>
+            <div class="logo"><a href="">NAVER</a></div>
+            <div style="height: 45px;"></div>
+            <div class="tab">
+                <div class="tabSize">ID 로그인</div>
+                <div class="tabSize">일회용 번호</div>
+                <div class="tabSize">QR코드</div>
+            </div>
+
+            <div class="input">
+                <p><input type="text" placeholder="아이디"></p>
+                <p><input type="text" placeholder="비밀번호"></p>
+
+                <div class="sb">
+                    <label>
+                        <input type="checkbox" style="margin-left: 25px;">
+                        로그인 상태유지
+                    </label>
+                    <label style="margin-right: 25px;">
+                        IP보안
+                        <input type="range" min="0" max="1">
+                    </label>
+                </div>
+
+                <div class="">
+                    <button>로그인</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        const divList = document.querySelectorAll('div')
+        divList.forEach(div => {
+            const r = parseInt((Math.random() * (127) + 128)).toString(16)
+            const g = parseInt((Math.random() * (127) + 128)).toString(16)
+            const b = parseInt((Math.random() * (127) + 128)).toString(16)
+            
+            div.style.border = `2px dashed #${r}${g}${b}`
+        })
+    </script>
+    
+</body>
+</html>
