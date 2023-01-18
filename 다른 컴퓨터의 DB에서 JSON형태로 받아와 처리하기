@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9_AJAX테스트.html</title>
+    <style>
+        #root {
+            border: 2px solid black;
+            margin: 0 auto;
+            padding: 0;
+        }
+        .item {
+            font-size: 19px;
+            border: 1px solid grey;
+            display: flex;
+        }
+        .item > div {
+            box-sizing: border-box;
+            margin-left: -2px;
+            margin-top: -3px;
+            padding: 5px 10px;
+            border: 1px solid black;
+            flex: 1;
+        }
+        .header > div {
+            border: 0;
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>9_AJAX테스트.html (DB 데이터로 만들기)</h1>
+    <hr>
+
+    <div id="root"></div>
+    
+    <script>
+        const root = document.getElementById('root')
+        const url = 'http://192.168.112.7:8080/member5'
+        const opt = {
+            method: 'GET'
+        }
+
+        const header = document.createElement('div')
+        // header.className = 'item'
+        header.classList.add('item')
+        header.classList.add('header')
+        header.innerHTML += '<div>IDX</div>'
+        header.innerHTML += '<div>USERID</div>'
+        header.innerHTML += '<div>USERPW</div>'
+        header.innerHTML += '<div>USERNAME</div>'
+        header.innerHTML += '<div>BIRTH</div>'
+        header.innerHTML += '<div>GENDER</div>'
+        root.appendChild(header)
+
+        fetch(url, opt)                  // 주소를 요청하면
+        .then(resp => resp.json())  // 응답을 받아서 json형태로 처리하여
+        .then(json => {             // json을 이용하여 코드를 진행하면 된다
+            const arr = json
+            console.log(arr)
+            console.log(new Date(arr[0].BIRTH).toISOString().split('T')[0])
+
+            arr.forEach(dto => {
+                const item = document.createElement('div')
+                item.classList.add('item')
+                item.innerHTML += `<div>${dto.IDX}</div>`
+                item.innerHTML += `<div>${dto.USERID}</div>`
+                item.innerHTML += `<div>${dto.USERPW}</div>`
+                item.innerHTML += `<div>${dto.USERNAME}</div>`
+                item.innerHTML += `<div>${new Date(dto.BIRTH).toLocaleDateString()}</div>`
+                item.innerHTML += `<div>${dto.GENDER}</div>`
+                root.appendChild(item)
+            })
+        })
+    </script>
+    
+</body>
+</html>
