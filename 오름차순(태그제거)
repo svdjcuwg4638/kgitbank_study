@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14_이벤트정렬.html</title>
+</head>
+<body>
+
+    <h1>14_이벤트정렬.html</h1>
+    <hr>
+
+    <p>
+        <button id="asc">오름차순</button>
+        <button id="desc">내림차순</button>
+    </p>
+    <div id="root">
+        <div class="item">2</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">4</div>
+        <div class="item">6</div>
+    </div>
+
+    <script>
+        const root = document.getElementById('root')
+        // root.innerHTML = ''  // 지정한 요소 내부의 모든 태그를 제거하기
+        // 1) item의 숫자만 가져와서 새로운 배열로 구성한다
+        // 2) 숫자 배열을 원하는 형태로 정렬한다
+        // 3) 정렬된 숫자들을 다시 <div class="item">에 넣는다
+        // 4) div들을 root에 appendChild()로 추가한다
+
+        const asc = document.getElementById('asc')
+        
+        asc.onclick = function() {
+            const itemList = document.querySelectorAll('.item') // nodeList
+            const itemArray = Array.from(itemList)              // Array<div>
+
+            // itemArray에 숫자만 가져와서 array를 생성
+            const numArray = itemArray.map(e => +e.innerText)   // Array<number>
+            console.log(numArray)
+
+            // sort로 오름차순정렬
+            numArray.sort()
+
+            // root안에 모든 내용을 지우고
+            root.innerHTML = ''
+                // 밑에서 새로 추가
+            numArray.forEach(num => {
+                const item = document.createElement('div')
+                // div   /div생성
+                item.classList.add('item')
+                // div class="item"
+                item.innerText = num
+                // <div class="item">num</div> 이때 num은 위에서 sort로 하여
+                // 제일 낮은 첫번째 숫자가 옴(처음엔)
+                root.appendChild(item)
+                //root안에 추가
+            })
+        }
+    </script>
+
+
+    
+</body>
+</html>
