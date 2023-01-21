@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15_이벤트정렬.html</title>
+</head>
+<body>
+
+    <h1>14_이벤트정렬.html</h1>
+    <hr>
+
+    <p>
+        <button id="asc">오름차순</button>
+        <button id="desc">내림차순</button>
+    </p>
+    <div id="root">
+        <div class="item">2</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">4</div>
+        <div class="item">6</div>
+    </div>
+
+    <script>
+        // root의 내부 태그를 제거하지 않고서도 정렬을 하려면 어떻게?
+        const root = document.getElementById('root')
+
+        function dataSort(event) {
+            const elementArray = Array.from(document.querySelectorAll('.item'))
+            // item을 모두 저장
+
+            if(event.target.id == 'asc') {
+                // 타겟의 id가 asc라면 오름차순 a  - b
+                elementArray.sort((a, b) => +a.innerText - +b.innerText)
+            }
+            if(event.target.id == 'desc') {
+                // 타겟의 id가 desc라면 내림차순 b - a
+                elementArray.sort((a, b) => +b.innerText - +a.innerText)
+            }
+            //위에서 정렬이 되고 내려오면 2 4 6 7 8 순으로 넣게된다 넣을때 같은
+            // 값이 있다면 밑으로 보내니 제거하지않아도 오름차순 정렬 가능
+            elementArray.forEach(e => root.appendChild(e))
+            // 같은 요소가 있으면 마지막으로 순서를 돌린다
+        }
+
+        document.querySelectorAll('button').forEach(btn => btn.onclick = dataSort)
+        // 버튼을 모두 가져와 foreach로 onclick라는 event 설정 dataSort뒤에 ( ) 가 붙지
+        // 않는 이유는 바로 실행하지 않고 누를시에만 발동하기 위해서
+    </script>
+
+
+    
+</body>
+</html>
